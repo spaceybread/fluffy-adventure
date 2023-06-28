@@ -26,8 +26,6 @@ public class primality {
       //a is the witness number
 
       int witRan = rand.nextInt(3) + 2;
-      //System.out.println(witness);
-      //System.out.println("\n");
 
       while (true) {
         if ((witRan % valForMod) != 0) {
@@ -41,33 +39,18 @@ public class primality {
 
       BigInteger witness = BigInteger.valueOf(witRan);
 
-      //BigInteger powerVal = Math.pow(witness, (value - 1));
-      //double fullPowerVal = Double.parseDouble(powerVal);
-
-
-      //System.out.println(powerVal);
-      //System.out.println("\n");
-
       BigInteger minusOne = BigInteger.valueOf(-1);
 
       BigInteger modVal = witness.modPow(value.add(minusOne), value);
-      //System.out.println(modVal);
-      //System.out.println("\n");
-
-
-
-      //System.out.println(modVal.equals(BigInteger.ONE));
 
       if (modVal.equals(BigInteger.ONE) && i > 10) {
         System.out.println("This might be a prime.");
         break;
       }
-
       else if ((!modVal.equals(BigInteger.ONE)) && i <= 10) {
         System.out.println("This is a composite number.");
         isComposite = true;
       }
     }
-
   }
 }
